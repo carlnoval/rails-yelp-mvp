@@ -9,6 +9,8 @@ class Review < ApplicationRecord
 
   # inclusion is to make sure that the rating is saved as within 0 to 5 but does not take strings into account...
   # that is where numericality comes to play
+  # possibilities to bump into a scenario where rating of  "five" gets turned to 0 when creating new instance...
+  # but "5" is allowed, SO: https://stackoverflow.com/questions/44514099/sqlite-insert-as-integer-and-as-text
   validates :rating, presence: true, inclusion: { in: (0..5), message: "rating must be from 0 to 5 only" }, numericality: { only_integer: true }
   validates :content, presence: true,  length: { minimum: 20, message: "must at least be 20 characters" }
 
