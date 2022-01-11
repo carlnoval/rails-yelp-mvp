@@ -11,3 +11,25 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+// Utils to kill the annoying browser default style
+// https://yannklein.github.io/yann-uikit/#responsive-container-section
+body {
+  background-color: rgb(250,250,250);
+  color: rgb(40,40,40);
+}
+  body, h1, h2, h3, p {
+  margin: 0;
+}
+ul {
+  padding: 0;
+}
+a {
+  text-decoration: none !important;
+  display: inline-block;
+}
+
+.navbar-container{
+  background-color: #c7e1f3;
+  height: 5rem;
+}
