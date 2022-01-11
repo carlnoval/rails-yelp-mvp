@@ -1,0 +1,7 @@
+rails db:migrate RAILS_ENV=test
+    -only migrates the test environment db
+
+rails db:migrate
+    - still needs to be ran separately for development db
+
+run both migration every changes made to the schema
