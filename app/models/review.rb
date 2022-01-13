@@ -18,4 +18,8 @@ class Review < ApplicationRecord
     self.save
     self.errors.messages
   end
+
+  def print_stars
+    self.rating.zero? ? '<p>Zeero Stars <i class="far fa-frown"></i></p>'.html_safe : ('<i class="fas fa-star"></i>' * self.rating).html_safe
+  end
 end

@@ -13,7 +13,8 @@ def resto_only(count)
       address: Faker::Address.street_address,
       # https://stackoverflow.com/questions/2640819/extract-number-from-string-in-ruby/59238529
       phone_number: Faker::PhoneNumber.cell_phone.delete("^0-9"),
-      category: ["Chinese", "Italian", "Japanese", "French", "Belgian"].sample)
+      category: ["chinese", "italian", "japanese", "french", "belgian"].sample
+    )
   end
 end
 
@@ -35,11 +36,9 @@ def resto_w_content (count={})
   end
 end
 
-
-
-resto_w_review = 2
+resto_w_review = 5
 review_count = 5
-resto_wo_review = 3
+resto_wo_review = 5
 puts "Cleaning database..."
 Restaurant.destroy_all
 puts "Database is now clean..."
@@ -48,6 +47,5 @@ resto_w_content restaurant: resto_w_review, review: review_count
 puts "Creating #{resto_wo_review} * Restaurant, w/o reviews"
 resto_only(resto_wo_review)
 puts "Seeding finished..."
-puts "Restaurant with lowest id: #{Restaurant.first.id}"
+puts "Restaurant with lowest id: #{Restaurant.all.first.id}"
 puts "Restaurant with highest id: #{Restaurant.last.id}"
-

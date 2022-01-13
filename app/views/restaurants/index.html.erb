@@ -1,0 +1,16 @@
+<div class="index-container d-flex justify-content-around flex-wrap">
+  <% @restaurants.each do |restaurant| %>
+    <div class="card resto-card border-dark" style="max-width: 18rem;">
+      <div class="card-header">
+          <%= restaurant.category.capitalize %>
+      </div>
+      <div class="resto-card-body card-body text-dark">
+        <%= link_to restaurant_path(restaurant), class: "btn btn-link p-0" do %>
+          <h5 class="card-title"><%= restaurant.name %></h5>
+        <% end %>
+        <p class="card-text"><%= restaurant.address %></p>
+        <p class="card-text"><%= number_to_phone(restaurant.phone_number, area_code: true) %></p>
+      </div>
+    </div>
+  <% end %>
+</div>

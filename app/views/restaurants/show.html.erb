@@ -1,0 +1,20 @@
+<div class="show-resto-container ">
+  <h1 class="page-headers">
+  <%= @restaurant.name %>'s Reviews
+  <%= link_to new_restaurant_review_path(@restaurant), class: "btn btn-primary .btn-lg" do %>
+    <i class="fas fa-list-ul"></i> Submit a Review
+  <% end %>
+  </h1>
+
+  <div class="resto-reviews-container">
+    
+    <ul class="list-group list-group-flush">
+      <% @restaurant.reviews.each do |review| %>
+      <li class="list-group-item">
+      <p><%= review.print_stars %></p>
+      <p><%= review.content %></p>
+      </li>
+    <% end %>
+  </ul>
+  </div>  
+</div>

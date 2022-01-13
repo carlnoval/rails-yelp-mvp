@@ -1,0 +1,10 @@
+<div class="new-resto-container">
+  <h1>Create Restaurant</h1>
+  <%= simple_form_for @restaurant do |f| %>
+    <%= f.input :name %>
+    <%= f.input :address %>
+    <%= f.input :category %>
+    <%= f.input :phone_number, as: :integer %>
+    <%= f.submit "Submit Restaurant", class: "btn btn-primary btn-block py-2" %>
+  <% end %>
+</div>

@@ -11,7 +11,7 @@ class Restaurant < ApplicationRecord
   # presence validation
   validates :name, :address, :phone_number, presence: :true
   validates :category, inclusion: { in: %w[chinese italian japanese french belgian], message: "must be one of: Chinese, Italian, Japanese, French, Belgian" }
-  validates :phone_number, format: { with: /\A^[-\(\)\d\.\ ]+\z/, message: "only allows numbers and these characters: ()-. and space" }
+  validates :phone_number, format: { with: /\A^[-\(\)\d\.\ ]+\z/, message: "must only numbers" }
 
   def em
     self.save

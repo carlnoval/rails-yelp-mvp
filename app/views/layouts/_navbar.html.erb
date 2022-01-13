@@ -1,5 +1,9 @@
-<div class="navbar-container navbar navbar-light" style="background-color: #c7e1f3;">
-  <%= link_to root_path, class: "btn btn-link .btn-lg" do %>
+<div class="navbar-container navbar navbar-light">
+  <%= link_to root_path, class: "btn btn-link .btn-lg nav-btn" do %>
     <i class="fas fa-utensils"></i> Restaurants
+  <% end %>
+  
+  <%= link_to new_restaurant_path, class: "btn btn-link .btn-lg nav-btn" do %>
+    <i class="fas fa-folder-plus"></i> Submit a Restaurant
   <% end %>
 </div>

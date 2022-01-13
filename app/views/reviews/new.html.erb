@@ -1,0 +1,8 @@
+<div class="new-review-container">
+  <h1 class="page-headers">Reviewing restaurant: <%= @restaurant.name %></h1>
+  <%= simple_form_for [@restaurant, @review] do |f| %>
+    <%= f.input :content %>
+    <%= f.input :rating, as: :integer %>
+    <%= f.submit "Submit Review", class: "btn btn-primary btn-block py-2" %>
+  <% end %>
+</div>
