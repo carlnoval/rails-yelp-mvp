@@ -8,9 +8,9 @@ class RestaurantsController < ApplicationController
   end
 
   def create
-    restaurant = Restaurant.new(strong_params)
-    restaurant.category.downcase!
-    if restaurant.save
+    @restaurant = Restaurant.new(strong_params)
+    @restaurant.category.downcase!
+    if @restaurant.save
       redirect_to restaurants_path
     else
       render new_restaurant_path
