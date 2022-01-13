@@ -9,11 +9,11 @@ class RestaurantsController < ApplicationController
 
   def create
     @restaurant = Restaurant.new(strong_params)
-    @restaurant.category.downcase!
+    @restaurant.category.downcase! unless @restaurant.category.nil?
     if @restaurant.save
-      redirect_to restaurants_path
+      redirect_to restaurant_path(@restaurant)
     else
-      render new_restaurant_path
+      render :new
     end
   end
 

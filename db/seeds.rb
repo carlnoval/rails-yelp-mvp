@@ -36,9 +36,9 @@ def resto_w_content (count={})
   end
 end
 
-resto_w_review = 5
+resto_w_review = 2
 review_count = 5
-resto_wo_review = 5
+resto_wo_review = 2
 puts "Cleaning database..."
 Restaurant.destroy_all
 puts "Database is now clean..."
